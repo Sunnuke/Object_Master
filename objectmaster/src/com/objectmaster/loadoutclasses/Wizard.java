@@ -12,16 +12,16 @@ public class Wizard extends Human {
 	
 //	Methods
 	public void stats() {
-		System.out.println("Loadout: " + this.loadout + " |Name: " + this.name + " |Strength: " + this.strength + " |Stealth: " + this.stealth + " |Intelligence: " + this.intelligence + " |Health :" + this.health + "%");
+		System.out.println("Loadout: " + this.loadout + " |Name: " + this.name + " |Strength: " + this.strength + " |Stealth: " + this.stealth + " |Intelligence: " + this.intelligence + " |Health :" + this.health + "HP");
 	}
 	
 	public void heal(Human person) {
 		this.gainHealth(person, this.intelligence);
-		System.out.println(this.name + " healed " + this.intelligence + "% of " + person.name + "'s health!");
+		System.out.println(this.name + " healed " + this.intelligence + "HP of " + person.name + "'s health!");
 	}
 	
 	public void fireball(Human person) {
-		this.attack(person, this.intelligence*3);
-		System.out.println(this.name + " used Fire Ball on " + person.name + " and burned " + this.intelligence + "% of their health!");
+		this.fattack(this, person, this.intelligence*3);
+		System.out.println(this.name + " used Fire Ball on " + person.name + " and burned " + this.intelligence*3 + "HP of their health!");
 	}
 }

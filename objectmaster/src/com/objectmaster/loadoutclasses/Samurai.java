@@ -9,20 +9,21 @@ public class Samurai extends Human {
 		this.health = 200;
 		this.count += 1;
 	}
-	
+
 //	Methods
 	public void stats() {
-		System.out.println("Loadout: " + this.loadout + " |Name: " + this.name + " |Strength: " + this.strength + " |Stealth: " + this.stealth + " |Intelligence: " + this.intelligence + " |Health :" + this.health + "%");
+		System.out.println("Loadout: " + this.loadout + " |Name: " + this.name + " |Strength: " + this.strength + " |Stealth: " + this.stealth + " |Intelligence: " + this.intelligence + " |Health :" + this.health + "HP");
 	}
 	
 	public void deathBlow(Human person) {
-		int h = this.health /= 2;
-		person.attack(person, person.health);
-		System.out.println(this.name + " hit " + person.name + " with a Death Blow and killed them! " + this.name + " lost " + h + "% of health in prefoming that attack!");
+		int h = this.health/2;
+		person.attack(this, person, person.health);
+		System.out.println(this.name + " hit " + person.name + " with a Death Blow and killed them! " + this.name + " lost " + h + "HP of health in prefoming that attack!");
+		this.sideEffect(h);
 	}
 	public void meditate() {
 		int h = this.gainHealth(this, this.health/2);
-		System.out.println(this.name + " meditated and regenerated " + h + "% of health!");
+		System.out.println(this.name + " meditated and regenerated " + h + "HP of health!");
 	}
 	public void howMany() {
 		System.out.println("There are " + this.count + " Samurai in this program!");

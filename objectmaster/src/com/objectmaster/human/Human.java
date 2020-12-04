@@ -9,13 +9,17 @@ public class Human {
 	private int health = 100;
 	
 //	Methods
-	public Human(String name) {
+	public void nameHuman(String name) {
 		this.name = name;
 	}
-	private void lossingHealth(Human person, int num) {
-		this.name = name;
+	public void stats() {
+		System.out.println("Name: " + this.name + " |Strength: " + this.strength + " |Stealth: " + this.stealth + " |Intelligence: " + this.intelligence + " |Health :" + this.health + "%");
 	}
 	
+	private void lossingHealth(Human person, int num) {
+		person.health -= num;
+		System.out.println(person.name + " was attacked by " + this.name + " and lost " + num + "% of Health!");
+	}
 	public void attack(Human person) {
 		person.lossingHealth(person, this.strength);
 	}
